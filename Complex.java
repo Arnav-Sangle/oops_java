@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Complex {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 			Scanner input = new Scanner (System.in);
   		 	float num1,num2;
@@ -15,25 +14,23 @@ public class Complex {
 	        int ch;
 	        do {
 		        
-		        System.out.printf("%n");
-		        System.out.printf(" %n");
-			System.out.print("enter the first no.");
+		        System.out.printf("%n%nEnter the first no. : ");
 		        num1=input.nextFloat();
 		        num2=input.nextFloat();
 		        object1= new complex_op(num1,num2);
-		        System.out.print("enter the second no.");
+		        System.out.printf("Enter the second no. : ");
 		        num1=input.nextFloat();
 		        num2=input.nextFloat();
 		        object2= new complex_op(num1,num2);
 	        	
-		        System.out.print("\nMENU\n");
-		        System.out.print("1. Addition\n");
-		        System.out.print("2. Subtraction\n");
-		        System.out.print("3. Multiplication\n");
-		        System.out.print("4. Division\n");
-		        System.out.print("EXIT(0)\n");
+		        System.out.printf("\nMENU\n");
+		        System.out.printf("1. Addition\n");
+		        System.out.printf("2. Subtraction\n");
+		        System.out.printf("3. Multiplication\n");
+		        System.out.printf("4. Division\n");
+		        System.out.printf("EXIT(0)\n");
 		        
-		        System.out.print("Enter choice: ");
+		        System.out.printf("Enter choice: ");
 		        ch = input.nextInt();
 	        	
 		        switch (ch) {
@@ -105,4 +102,4 @@ class complex_op
          System.out.println("(" + real + ") + "+ "("+imag+")i"); 
     }
     
-}        
+}                
