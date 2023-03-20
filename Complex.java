@@ -36,11 +36,15 @@ public class Complex {
 	        	
 		        switch (ch) {
 				case 1: cal.AddNumbers(object1,object2);
+					break;
 				case 2: cal.subNumbers(object1,object2);
+					break;
 				case 3: cal.mulNumbers(object1,object2);
+					break;
 				case 4: cal.divNumbers(object1,object2);
+					break;
 				case 0: System.out.print("Exit Successful\n");
-					
+					break;
 				default: System.out.print("Invalid Choice\n");
 					
 				}
