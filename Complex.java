@@ -15,7 +15,9 @@ public class Complex {
 	        int ch;
 	        do {
 		        
-		        System.out.print("enter the first no.");
+		        System.out.printf("%n");
+		        System.out.printf(" %n");
+			System.out.print("enter the first no.");
 		        num1=input.nextFloat();
 		        num2=input.nextFloat();
 		        object1= new complex_op(num1,num2);
