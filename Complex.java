@@ -2,7 +2,7 @@ package javalab;
 
 import java.util.Scanner;
 
-public class complex {
+public class Complex {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
