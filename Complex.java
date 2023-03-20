@@ -35,13 +35,13 @@ public class Complex {
 		        ch = input.nextInt();
 	        	
 		        switch (ch) {
-					case 1 -> cal.AddNumbers(object1,object2);
-					case 2 -> cal.subNumbers(object1,object2);
-					case 3 -> cal.mulNumbers(object1,object2);
-					case 4 -> cal.divNumbers(object1,object2);
-					case 0 -> System.out.print("Exit Successful\n");
+				case 1: cal.AddNumbers(object1,object2);
+				case 2: cal.subNumbers(object1,object2);
+				case 3: cal.mulNumbers(object1,object2);
+				case 4: cal.divNumbers(object1,object2);
+				case 0: System.out.print("Exit Successful\n");
 					
-					default -> System.out.print("Invalid Choice\n");
+				default: System.out.print("Invalid Choice\n");
 					
 				}
 		        
