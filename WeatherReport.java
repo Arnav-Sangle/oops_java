@@ -5,17 +5,17 @@ import java.util.*;
 public class WeatherReport{
 
 	public static void main(String[] args) {
-		double d, ht, lt, rain, snow;
+		double n, ht, lt, rain, snow;
 		
 		Scanner in = new Scanner(System.in);
-//		Weather obj= new Weather();
+		Weather obj= new Weather();
 		Weather w[] = new Weather[20];
 		
 		System.out.printf("Enter no. of days: ");
-		d = in.nextDouble();		
+		n = in.nextDouble();		
 		
-		for(int i=0; i<d; i++) {
-			System.out.printf("Enter weather details of day-%d:\n", i+1);
+		for(int i=0; i<n; i++) {
+			System.out.printf("\nEnter weather details of day-%d:\n", i+1);
 			
 			System.out.printf("Enter high temp: ");
 			ht = in.nextDouble();
@@ -29,8 +29,10 @@ public class WeatherReport{
 			System.out.printf("Enter amount of snow: ");
 			snow = in.nextDouble();
 			
-			w[i] = new Weather(d, ht, lt, rain, snow);
+			w[i] = new Weather((double)i+1, ht, lt, rain, snow);
 		}
+		
+		obj.printReport(w, n);
 		
 		in.close();
 	}
@@ -75,13 +77,43 @@ class Weather {
 //		input.close();
 //	}
 	
-	public void avgHighTemp_avg(Weather w) {
-		double sum;
-		for(int i=0; i<w.day; i++) {
-			
+	public double avgHighTemp(Weather w[], double n) {
+		double sum = 0;
+		for(int i=0; i<n; i++) {
+			sum += w[i].highTemp;
 		}
+		return sum/n;
+	}
+
+	public double avgLowTemp(Weather w[], double n) {
+		double sum = 0;
+		for(int i=0; i<n; i++) {
+			sum += w[i].lowTemp;
+		}
+		return sum/n;
 	}
 	
+	public double avgAmtRain(Weather w[], double n) {
+		double sum = 0;
+		for(int i=0; i<n; i++) {
+			sum += w[i].amtRain;
+		}
+		return sum/n;
+	}
+
+	public double avgAmtSnow(Weather w[], double n) {
+		double sum = 0;
+		for(int i=0; i<n; i++) {
+			sum += w[i].amtSnow;
+		}
+		return sum/n;
+	}
 	
-	
+	public void printReport(Weather w[], double n) {
+		System.out.printf("\n\nWeather Report (%.0f Days)-\n", n);
+		System.out.printf("Average High temprature: %.2f\n", avgHighTemp(w, n));
+		System.out.printf("Average Low temprature: %.2f\n", avgLowTemp(w, n));
+		System.out.printf("Average amount of Rain: %.2f\n", avgAmtRain(w, n));
+		System.out.printf("Average amount of Snow: %.2f\n", avgAmtSnow(w, n));
+	}
 }
