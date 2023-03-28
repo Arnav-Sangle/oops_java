@@ -1,0 +1,242 @@
+package arnav;
+
+import java.util.*;
+
+public class Salary {
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+	
+		Programmer obj1 = new Programmer();
+		Team_Lead obj2 = new Team_Lead();
+		Assistant_Project_Manager obj3 = new Assistant_Project_Manager();
+		Project_Manager obj4 = new Project_Manager();
+		
+		int ch;
+		do {
+			
+			System.out.printf("%n******MENU******%n");
+			System.out.printf("1. Programmer\n");
+			System.out.printf("2. Team Lead\n");
+			System.out.printf("3. Assistant Project Manager\n");
+			System.out.printf("4. Project Manager\n");
+			System.out.printf("EXIT(0)\n");
+			
+			System.out.printf("Enter your choice: ");
+			ch = in.nextInt();
+			
+			switch(ch) {
+			case 1:	
+				System.out.printf()
+				obj1.getData();
+				obj1.displayData();
+					
+					
+					
+			}
+		
+		}while(ch != 0);
+		
+		in.close();
+	}
+
+}
+
+
+
+class Employee {
+	String emp_name;
+	int emp_id;
+	String address;
+	String mail_id;
+	long mobile_no;
+	
+	void getData() {
+		Scanner in = new Scanner(System.in);
+		
+		System.out.println("Enter Employee data:-\n");
+		
+		System.out.println("Enter ID: ");
+		emp_id = in.nextInt();
+		
+		System.out.println("Enter Name: ");
+		emp_name= in.nextLine();
+		
+		System.out.println("Enter E-mail ID: ");
+		mail_id= in.nextLine();
+		
+		System.out.println("Enter Address: ");
+		address= in.nextLine();
+		
+		System.out.println("Enter Mobile No: ");
+		mobile_no= in.nextLong();
+		
+		in.close();
+	}
+	
+	void displayData() {
+		Scanner in = new Scanner(System.in);
+		
+		System.out.printf("Employee Details :-\n");
+		System.out.printf("\tEmployee ID: %d", emp_id);
+		System.out.printf("\tName: %s", emp_name);
+		System.out.printf("\tE-mail ID: %s", mail_id);
+		System.out.printf("\tAddress: %s", address);
+		System.out.printf("\tMobile No: %ld", mobile_no);
+		
+		in.close();
+	}
+	
+}
+
+
+
+
+class Programmer extends Employee {
+	double bp, da, hra, pf, cf, net, gross;		//basic pay
+	
+	Programmer () {
+		bp = 0;
+		da = 0;
+		hra = 0;
+		pf = 0;
+		cf = 0;
+		gross = 0;
+		net = 0;
+	}
+	
+	Programmer (double basicPay) {
+		bp = basicPay;
+		da = bp * 97/100;
+		hra = bp * 10/100;
+		pf = bp * 12/100;
+		cf = bp * 0.1/100;
+		gross = da + hra + pf + cf;
+		net = gross - pf - cf;
+	}
+	
+	void displaySal() {
+		System.out.printf("Programmer Salary Details -\n");
+		System.out.printf("\tBasic Pay: %.2f\n", bp);
+		System.out.printf("\tDearness Allowance: %.2f", da);
+		System.out.printf("\tHouse Rent Allowance:  %.2f", hra);
+		System.out.printf("\tPersonal Fund: %.2f", pf);
+		System.out.printf("\tClub fund: %.2f", cf);
+		System.out.printf("\tGross Payement: %.2f", gross);
+		System.out.printf("\tNet Payement: %.2f", net);
+	}
+}
+
+
+
+
+class Team_Lead extends Employee {
+	double bp, da, hra, pf, cf, net, gross;
+	
+	Team_Lead() {
+		bp = 0;
+		da = 0;
+		hra = 0;
+		pf = 0;
+		cf = 0;
+		gross = 0;
+		net = 0;
+	}
+	
+	Team_Lead (double basicPay) {
+		bp = basicPay;
+		da = bp * 97/100;
+		hra = bp * 10/100;
+		pf = bp * 12/100;
+		cf = bp * 0.1/100;
+		gross = da + hra + pf + cf;
+		net = gross - pf - cf;
+	}
+
+	void displaySal() {
+		System.out.printf("Programmer Salary Details -\n");
+		System.out.printf("\tBasic Pay: %.2f\n", bp);
+		System.out.printf("\tDearness Allowance: %.2f", da);
+		System.out.printf("\tHouse Rent Allowance:  %.2f", hra);
+		System.out.printf("\tPersonal Fund: %.2f", pf);
+		System.out.printf("\tClub fund: %.2f", cf);
+		System.out.printf("\tGross Payement: %.2f", gross);
+		System.out.printf("\tNet Payement: %.2f", net);
+	}
+}
+
+
+
+
+class Assistant_Project_Manager extends Employee {
+	double bp, da, hra, pf, cf, net, gross;
+	
+	Assistant_Project_Manager() {
+		bp = 0;
+		da = 0;
+		hra = 0;
+		pf = 0;
+		cf = 0;
+		gross = 0;
+		net = 0;
+	}
+	
+	Assistant_Project_Manager (double basicPay) {
+		bp = basicPay;
+		da = bp * 97/100;
+		hra = bp * 10/100;
+		pf = bp * 12/100;
+		cf = bp * 0.1/100;
+		gross = da + hra + pf + cf;
+		net = gross - pf - cf;
+	}
+	
+	void displaySal() {
+		System.out.printf("Programmer Salary Details -\n");
+		System.out.printf("\tBasic Pay: %.2f\n", bp);
+		System.out.printf("\tDearness Allowance: %.2f", da);
+		System.out.printf("\tHouse Rent Allowance:  %.2f", hra);
+		System.out.printf("\tPersonal Fund: %.2f", pf);
+		System.out.printf("\tClub fund: %.2f", cf);
+		System.out.printf("\tGross Payement: %.2f", gross);
+		System.out.printf("\tNet Payement: %.2f", net);
+	}
+}
+
+
+
+
+class Project_Manager extends Employee {
+	double bp, da, hra, pf, cf, net, gross;
+	
+	Project_Manager() {
+		bp = 0;
+		da = 0;
+		hra = 0;
+		pf = 0;
+		cf = 0;
+		gross = 0;
+		net = 0;
+	}
+	
+	Project_Manager (double basicPay) {
+		bp = basicPay;
+		da = bp * 97/100;
+		hra = bp * 10/100;
+		pf = bp * 12/100;
+		cf = bp * 0.1/100;
+		gross = da + hra + pf + cf;
+		net = gross - pf - cf;
+	}
+	
+	void displaySal() {
+		System.out.printf("Programmer Salary Details -\n");
+		System.out.printf("\tBasic Pay: %.2f\n", bp);
+		System.out.printf("\tDearness Allowance: %.2f", da);
+		System.out.printf("\tHouse Rent Allowance:  %.2f", hra);
+		System.out.printf("\tPersonal Fund: %.2f", pf);
+		System.out.printf("\tClub fund: %.2f", cf);
+		System.out.printf("\tGross Payement: %.2f", gross);
+		System.out.printf("\tNet Payement: %.2f", net);
+	}
+}
+
