@@ -1,5 +1,3 @@
-package arnav;
-
 import java.util.*;
 
 public class LibrarySale {
@@ -53,7 +51,7 @@ class Publication {
 		this.copies = n;		
 	}
 	
-	void read_publ() {
+	void read_publ() {     
 		Scanner in = new Scanner(System.in);
 	    System.out.printf("Enter Title: ");
 		this.title=in.nextLine();
@@ -68,11 +66,11 @@ class Publication {
 		if (number <= copies) {
 			copies = copies-number;
 			totalSale = totalSale + number*price;
-			System.out.print("Copies purchased: "+number+"\tTotal cost: "+price*number);
+			System.out.print("Copies purchased: "+number+"\tTotal cost: "+price*number+"\n");
 		}
 
 		else {
-			System.out.println("Insufficient Stock!");
+			System.out.print("Insufficient Stock!\n");
 		}
 	
 }
@@ -85,10 +83,10 @@ class Book extends Publication {
 	String author;
 
 	void order_copies(int number) {
-		int x= this.getCopies()-number;
+		int x = this.getCopies()+number;
 		this.setCopies(x);
-		System.out.println("\n\tORDER SUCESSFUL....");
-		System.out.println("\tCOPIES AVAILABLE : "+x);
+		System.out.print("\nOreder successful!\n");
+		System.out.print("\tCopies Available: "+x);
 	}
 	
 	
@@ -101,20 +99,17 @@ class Book extends Publication {
 	
 }
 
-
-
-
 //magazine class
 class Magazine extends Publication {
 	int orderQty;
 	String issueDate;
 	
 	void receive_issue(String new_issue_date) {
-		System.out.println("ENTER NEW COPIES ORDERED: ");
+		System.out.print("\nEnter new copies ordered: ");
 		order_qty=sc.nextInt();
-		setcopies(order_qty);
+		setCopies(order_qty);
 		issue_date=new_issue_date;
-		System.out.println("\tTHE MAGAZINE "+gettitle()+" \n\t WITH ISSUE DATE "+issue_date+"AVAILABLE");
+		System.out.println("\tThe magazine "+gettitle()+" \n\t with issue date "+issue_date+"AVAILABLE");
 	}
 	
 	void display_mag() {
