@@ -1,31 +1,73 @@
+package arnav;
+
 import java.util.*;
 
 public class LibrarySale {
 	public static void main(String[] args) {
-		
-		//CREATE OBJECTS FOR SCANNING INPUTS OG BOOK AND MAGAZINE
 		Scanner in = new Scanner(System.in);
-		Book b=new Book();
-		Magazine m=new Magazine();
+		
+		//Create objects of Book & Magazine to read Inputs
+		Book b = new Book();
+		Magazine m = new Magazine();
 		
 		int ch;
 		
 		
 		do {
-			/*System.out.printf("%n******MENU******%n");
-			System.out.printf("1. BOOK\n");
-			System.out.printf("2. MAGAZINE\n");
-			System.out.printf("1. AMOUNT OF COPIES\n");
-			System.out.printf("2. TOTAL SALE OF PUBLICATION\n");*/
-			System.out.printf("ENTER THE CHOICE: ");
+			System.out.printf("%n******MENU******%n");
+			System.out.print("1. Book\n");
+			System.out.print("2. Magazine\n");
+			System.out.print("3. Total Cost of Purchase/Rent\n");
+			System.out.print("4. Total Sale of Publication\n");
+			System.out.print("EXIT(0)");
+			
+			System.out.print("Enter your choice :");
 			ch=in.nextInt();
-			switch (ch)
-			{
-			case 1:
-				System.out.printf(" ");
-				
-			case 2:
-				System.out.printf(" ");
+			
+			if(ch==1) {
+				int ch1;
+				do {
+					System.out.print("%n******MENU FOR BOOK******%n");
+					System.out.print("1.Input\n");
+					System.out.print("2.Display\n");
+					System.out.print("3.Purchase Copies\n");
+					System.out.print("4.Order Copies\n");
+					
+					System.out.printf("Enter your choice :");
+					ch=in.nextInt();
+					switch(ch) {
+					
+					case 1:
+						b.readBook();
+						break;
+						
+					case 2:
+						b.diplayBook();
+						break;
+					
+					case 3:
+				    	System.out.print("How many Copies you want to buy:");
+						int n1 = in.nextInt();
+						b.saleCopy(n1);
+						break;
+					
+					case 4:
+				    	System.out.print("How many Copies you want to buy:");
+						int n2 = in.nextInt();
+						b.orderCopies(n2);
+						break;
+						
+					default:
+						System.out.print("Invalid choice!\n");
+					}
+					
+					System.out.println("Do you want to continue with book section[1/0]\n\t1.YES \t\t0.NO");
+					System.out.print("\tChoice::");
+					ch1=in.nextInt();
+					
+				}while(ch1!=0);
+			
+
 				
 			}
 		} while (ch!=0);
@@ -51,7 +93,15 @@ class Publication {
 		this.copies = n;		
 	}
 	
-	void read_publ() {     
+	protected String getTitle() {
+		return this.title;	
+	}
+	
+	protected void setTitle(String s) {
+		this.title = s;		
+	}
+	
+	void readPublication() {     
 		Scanner in = new Scanner(System.in);
 	    System.out.printf("Enter Title: ");
 		this.title=in.nextLine();
@@ -72,7 +122,7 @@ class Publication {
 		else {
 			System.out.print("Insufficient Stock!\n");
 		}
-	
+	}
 }
 
 
@@ -80,17 +130,24 @@ class Publication {
 
 //book child class 
 class Book extends Publication {
+	Scanner in = new Scanner(System.in);
+	
 	String author;
 
-	void order_copies(int number) {
+	void orderCopies(int number) {
 		int x = this.getCopies()+number;
 		this.setCopies(x);
 		System.out.print("\nOreder successful!\n");
 		System.out.print("\tCopies Available: "+x);
 	}
 	
+	void readBook() {
+		System.out.print("Enter name of the author: ");
+		readPublication();
+		author = in.next();
+	}
 	
-	void display() {
+	void diplayBook() {
 		System.out.printf("Title: %s", title);
 		System.out.printf("Price: %.2f", price);
 		System.out.printf("Copies avaliable: %d", copies);
@@ -101,21 +158,31 @@ class Book extends Publication {
 
 //magazine class
 class Magazine extends Publication {
+	Scanner in = new Scanner(System.in);
+	
 	int orderQty;
 	String issueDate;
 	
 	void receive_issue(String new_issue_date) {
 		System.out.print("\nEnter new copies ordered: ");
-		order_qty=sc.nextInt();
-		setCopies(order_qty);
-		issue_date=new_issue_date;
-		System.out.println("\tThe magazine "+gettitle()+" \n\t with issue date "+issue_date+"AVAILABLE");
+		orderQty= in.nextInt();
+		setCopies(orderQty);
+		issueDate = new_issue_date;
+		System.out.println("\tMagazine: "+getTitle()+" \tIssue date: "+issueDate+" \tStatus: Available\n");
 	}
 	
-	void display_mag() {
+	 void readMagazine() {
+		 readPublication();
+		 System.out.print("Enter the issue date[dd/mm/yy]\n");
+		 issueDate = in.next();
+	 }
+	
+	void displayMagzine() {
 		System.out.printf("Title: %s\n", title);
 		System.out.printf("Price: %.2f\n", price);
 		System.out.printf("Copies avaliable: %d\n", copies);
 		System.out.printf("Issue date: %s\n", issueDate);
 	}
 }
+
+
