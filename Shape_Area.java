@@ -2,7 +2,7 @@ package arnav;
 
 import java.util.*;
 
-public class Shape_Area {
+public class ShapeArea {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		
