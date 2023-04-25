@@ -110,7 +110,7 @@ class Car implements Vehicle {
 			if(speed<=10 && gear>1) {
 				speed=0;
 			}
-			else if((speed<10 || speed>=20) && gear==2) {
+			else if((speed<10  && gear==2) || (speed>=20 && gear==2)) {
 				speed=0;
 			}
 			else if((speed<20 && speed>=40) && gear==3) {
