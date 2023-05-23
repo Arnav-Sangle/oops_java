@@ -33,7 +33,7 @@ class Bicycle implements Vehicle {
 			speed += 5;
 			System.out.print("\tBicycles speed increased\n");
 		} else {
-			System.out.print("Speed Cannot Be Increased Above 50 Kmhr\n");
+			System.out.print("Speed Cannot Be Increased Above 50 Km/hr\n");
 		}
 		display();
 	}
@@ -70,7 +70,7 @@ class Bicycle implements Vehicle {
 	public void display() {
 		System.out.print("\n\t*****BICYCLE*****\n");
 		System.out.print("\tSPEED\t GEAR\n");
-		System.out.print(" \t" + speed + "Kmhr\t  " + gear + "\n");
+		System.out.print(" \t" + speed + "Km/hr\t  " + gear + "\n");
 	}
 }
 
@@ -100,7 +100,7 @@ class Car implements Vehicle {
 			speed += 20;
 			System.out.print("Cars speed increased\n");
 		} else {
-			System.out.print("Speed Cannot Be Increased Above 150 Kmhr\n");
+			System.out.print("Speed Cannot Be Increased Above 150 Km/hr\n");
 		}
 		display();
 
@@ -168,7 +168,7 @@ class Bike implements Vehicle {
 			speed += 10;
 			System.out.print("Bike's speed increased\n");
 		} else {
-			System.out.print("Speed Cannot Be Increased Above 100 Kmhr\n");
+			System.out.print("Speed Cannot Be Increased Above 100 Km/hr\n");
 		}
 		display();
 	}
@@ -206,7 +206,7 @@ class Bike implements Vehicle {
 	public void display() {
 		System.out.print("\n\t*****BIKE*****\n");
 		System.out.print("\n\tSPEED\t GEAR\n");
-		System.out.print(" \t" + speed + "Kmhr\t  " + gear + "\n");
+		System.out.print(" \t" + speed + "Km/hr\t  " + gear + "\n");
 	}
 }
 
