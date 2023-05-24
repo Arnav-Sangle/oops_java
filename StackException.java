@@ -13,6 +13,7 @@ class Stack {
 		}
 		catch(ArrayIndexOutOfBoundsException e) {
 			System.out.print("Stack overflow !\n");
+			top--;
 		}
 	}
 
