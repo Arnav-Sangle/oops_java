@@ -19,6 +19,8 @@ class StudentInfo {
 	
 }
 
+// https://www.interviewkickstart.com/learn/sort-hashmap
+
 public class StudentMarksheetHashmap {
 	
 	public static void main(String[] args) {
@@ -32,7 +34,7 @@ public class StudentMarksheetHashmap {
 		idName.put(102, "sachin");
 		idName.put(103, "vaibhav");
 		
-		HashMap<Integer, Double> nameMarks = new HashMap<String, Double>();
+		HashMap<Integer, Double> nameMarks = new HashMap<Integer, Double>();
 		nameMarks.put(101, 97.0);
 		nameMarks.put(102, 56.0);
 		nameMarks.put(103, 78.0);
