@@ -1,8 +1,7 @@
 package assignments;
 
-import java.io.*;		// File
-import java.rmi.server.RemoteStub;
-import java.util.*;		//	
+import java.io.*;	//File create
+import java.util.*;	
 
 import javax.naming.spi.DirStateFactory.Result;
 
@@ -24,15 +23,16 @@ public class fileIO {
 				System.out.println("File already exists");
 			}
 			
-			
-			String text = "i am not here";
+			String text = "I am not here";
 			FileWriter fWriter = new FileWriter(a);
 			fWriter.write(text);
+			
 			fWriter.close();
-			
 		}
-		catch(Exception e){
-			
+		catch(IOException e){
+			throw new RuntimeException(e);	//for unchecked exceptions, 	program Terminates after this statement
+			//OR
+			//System.out.println("An error occurred!");
 		}
 		
 	}
