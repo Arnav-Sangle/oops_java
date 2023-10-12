@@ -44,49 +44,53 @@ public class CalciApp {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 211, 422);
+		frame.setBounds(100, 100, 287, 422);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		textField = new JTextField();
-		textField.setBounds(10, 11, 175, 33);
+		textField.setBounds(10, 11, 180, 33);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		JButton button1 = new JButton("1");
-		button1.setBounds(9, 111, 39, 44);
+		button1.setBounds(9, 111, 45, 44);
 		frame.getContentPane().add(button1);
 		
 		JButton button2 = new JButton("2");
-		button2.setBounds(53, 111, 39, 44);
+		button2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button2.setBounds(53, 111, 45, 44);
 		frame.getContentPane().add(button2);
 		
 		JButton button3 = new JButton("3");
-		button3.setBounds(96, 111, 39, 44);
+		button3.setBounds(96, 111, 45, 44);
 		frame.getContentPane().add(button3);
 		
 		JButton button4 = new JButton("4");
-		button4.setBounds(9, 166, 39, 44);
+		button4.setBounds(9, 166, 45, 44);
 		frame.getContentPane().add(button4);
 		
 		JButton button5 = new JButton("5");
-		button5.setBounds(53, 166, 39, 44);
+		button5.setBounds(53, 166, 45, 44);
 		frame.getContentPane().add(button5);
 		
 		JButton button6 = new JButton("6");
-		button6.setBounds(96, 166, 39, 44);
+		button6.setBounds(96, 166, 45, 44);
 		frame.getContentPane().add(button6);
 		
 		JButton button7 = new JButton("7");
-		button7.setBounds(10, 221, 39, 44);
+		button7.setBounds(10, 221, 45, 44);
 		frame.getContentPane().add(button7);
 		
 		JButton button8 = new JButton("8");
-		button8.setBounds(53, 221, 39, 44);
+		button8.setBounds(53, 221, 45, 44);
 		frame.getContentPane().add(button8);
 		
 		JButton button9 = new JButton("9");
-		button9.setBounds(96, 221, 39, 44);
+		button9.setBounds(96, 221, 45, 44);
 		frame.getContentPane().add(button9);
 		
 		JButton button0 = new JButton("0");
@@ -94,11 +98,11 @@ public class CalciApp {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button0.setBounds(9, 276, 39, 44);
+		button0.setBounds(9, 276, 45, 44);
 		frame.getContentPane().add(button0);
 		
 		JButton buttonBackspace = new JButton("B");
-		buttonBackspace.setBounds(96, 56, 40, 44);
+		buttonBackspace.setBounds(96, 56, 45, 44);
 		frame.getContentPane().add(buttonBackspace);
 		
 		JButton buttonOnOff = new JButton("On/Off");
@@ -110,15 +114,15 @@ public class CalciApp {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		buttonSubtract.setBounds(145, 221, 40, 44);
+		buttonSubtract.setBounds(145, 221, 45, 44);
 		frame.getContentPane().add(buttonSubtract);
 		
 		JButton buttonModuloDiv = new JButton("%");
-		buttonModuloDiv.setBounds(140, 331, 45, 41);
+		buttonModuloDiv.setBounds(145, 331, 45, 41);
 		frame.getContentPane().add(buttonModuloDiv);
 		
 		JButton buttonDecimalPoint = new JButton(".");
-		buttonDecimalPoint.setBounds(53, 276, 39, 44);
+		buttonDecimalPoint.setBounds(53, 276, 45, 44);
 		frame.getContentPane().add(buttonDecimalPoint);
 		
 		JButton buttonEquals = new JButton("=");
@@ -126,7 +130,7 @@ public class CalciApp {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		buttonEquals.setBounds(96, 276, 40, 44);
+		buttonEquals.setBounds(96, 276, 45, 44);
 		frame.getContentPane().add(buttonEquals);
 		
 		JButton buttonClearAll = new JButton("C");
@@ -134,15 +138,15 @@ public class CalciApp {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		buttonClearAll.setBounds(145, 56, 40, 44);
+		buttonClearAll.setBounds(145, 56, 45, 44);
 		frame.getContentPane().add(buttonClearAll);
 		
 		JButton buttonMultiply = new JButton("x");
-		buttonMultiply.setBounds(145, 166, 40, 44);
+		buttonMultiply.setBounds(145, 166, 45, 44);
 		frame.getContentPane().add(buttonMultiply);
 		
 		JButton buttonDivide = new JButton("/");
-		buttonDivide.setBounds(145, 276, 40, 44);
+		buttonDivide.setBounds(145, 276, 45, 44);
 		frame.getContentPane().add(buttonDivide);
 		
 		JButton buttonAdd = new JButton("+");
@@ -150,7 +154,7 @@ public class CalciApp {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		buttonAdd.setBounds(145, 111, 40, 44);
+		buttonAdd.setBounds(145, 111, 45, 44);
 		frame.getContentPane().add(buttonAdd);
 	}
 	private class SwingAction extends AbstractAction {
