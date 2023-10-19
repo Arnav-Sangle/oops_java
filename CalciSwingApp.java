@@ -40,6 +40,19 @@ public class CalciApp {
 			}
 		});
 	}
+	
+	public void on_off() {
+		boolean val = textField.isEnabled() ;
+		
+		if(val) {
+			textField.setEnabled(false);
+		}
+		else {
+			textField.setEnabled(true);
+		}
+		
+	}
+	
 
 	/**
 	 * Create the application.
@@ -180,6 +193,11 @@ public class CalciApp {
 		frame.getContentPane().add(buttonBackspace);
 		
 		JButton buttonOnOff = new JButton("On/Off");
+		buttonOnOff.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				on_off();
+			}
+		});
 		buttonOnOff.setBounds(9, 56, 80, 44);
 		frame.getContentPane().add(buttonOnOff);
 		
